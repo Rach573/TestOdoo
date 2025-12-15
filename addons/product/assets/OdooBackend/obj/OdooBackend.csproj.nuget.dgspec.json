@@ -1,24 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elrai\\doker\\addons\\product\\assets\\OdooBackend\\OdooBackend.csproj": {}
+    "/home/runner/work/TestOdoo/TestOdoo/addons/product/assets/OdooBackend/OdooBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elrai\\doker\\addons\\product\\assets\\OdooBackend\\OdooBackend.csproj": {
+    "/home/runner/work/TestOdoo/TestOdoo/addons/product/assets/OdooBackend/OdooBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elrai\\doker\\addons\\product\\assets\\OdooBackend\\OdooBackend.csproj",
+        "projectUniqueName": "/home/runner/work/TestOdoo/TestOdoo/addons/product/assets/OdooBackend/OdooBackend.csproj",
         "projectName": "OdooBackend",
-        "projectPath": "C:\\Users\\elrai\\doker\\addons\\product\\assets\\OdooBackend\\OdooBackend.csproj",
-        "packagesPath": "C:\\Users\\elrai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elrai\\doker\\addons\\product\\assets\\OdooBackend\\obj\\",
+        "projectPath": "/home/runner/work/TestOdoo/TestOdoo/addons/product/assets/OdooBackend/OdooBackend.csproj",
+        "packagesPath": "/home/runner/work/TestOdoo/.codeql-scratch/dbs/csharp/working/packages",
+        "outputPath": "/home/runner/work/TestOdoo/TestOdoo/addons/product/assets/OdooBackend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\elrai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/runner/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
@@ -51,6 +54,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -59,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
