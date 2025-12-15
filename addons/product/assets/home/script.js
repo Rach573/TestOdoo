@@ -36,7 +36,12 @@ async function loadProducts() {
         status.textContent = "Produits chargés : " + (Array.isArray(data) ? data.length : 0);
         renderProducts(Array.isArray(data) ? data : []);
     } catch (e) {
-        status.textContent = "Erreur : " + e.message;
+        if (e.message.includes("Failed to fetch") || e.message.includes("NetworkError")) {
+            status.textContent = "Erreur de connexion : Impossible de joindre le serveur backend. Vérifiez que le serveur est démarré sur " + API_URL;
+        } else {
+            status.textContent = "Erreur : " + e.message;
+        }
+        console.error("Erreur détaillée:", e);
     }
 }
 
