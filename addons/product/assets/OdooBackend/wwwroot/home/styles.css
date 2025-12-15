@@ -1,0 +1,176 @@
+/* ==========================================================
+   GLOBAL
+   ========================================================== */
+
+/* Dégradé global élégant */
+body {
+  margin: 0;
+  padding: 1.25rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(135deg, #e3f2fd, #f7f7f8);
+  color: #111;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.09);
+  backdrop-filter: blur(6px);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #0058d8, #0084ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* ==========================================================
+   FORMULAIRE DE CONFIGURATION
+   ========================================================== */
+
+label {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.55rem;
+  margin-top: 0.25rem;
+  box-sizing: border-box;
+  border: 1px solid #d0d0d3;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fff;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+input:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* BOUTON MODERNE */
+.loadbtn {
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #0066cc, #003d99);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.loadbtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.loadbtn:active {
+  transform: scale(0.98);
+}
+
+#status {
+  margin-top: 1rem;
+  color: #333;
+}
+
+/* Mise en grille des 4 champs */
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================
+   GRILLE DE PRODUITS
+   ========================================================== */
+
+#productsContainer {
+  margin-top: 2rem;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* ==========================================================
+   CARTE PRODUIT — DESIGN LUXE + HOOVER
+   ========================================================== */
+
+.product-card {
+  background: linear-gradient(145deg, #ffffff, #f2f4f7);
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #dcdce1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.product-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(145deg, #fafbff, #ffffff);
+}
+
+.product-card h2 {
+  font-size: 1.3rem;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  color: #0a1a33;
+}
+
+.product-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* ==========================================================
+   BOUTON OPTIONNEL DANS LES CARTES
+   ========================================================== */
+
+.product-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 16px;
+  background: linear-gradient(90deg, #005adc, #007fff);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.product-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}

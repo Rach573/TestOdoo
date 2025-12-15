@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Charger les produits - Configuration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Configuration — Charger les produits</h1>
+
+    <!-- Formulaire de configuration -->
+    <form id="configForm" onsubmit="return false;">
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="url">URL Odoo</label>
+          <input type="url" id="url" name="url" value="http://localhost:8069" required />
+        </div>
+
+        <div class="form-field">
+          <label for="db">Base de données</label>
+          <input type="text" id="db" name="db" value="mydb" required />
+        </div>
+
+        <div class="form-field">
+          <label for="user">Utilisateur</label>
+          <input type="text" id="user" name="user" value="rachidzerga@gmail.com" required />
+        </div>
+
+        <div class="form-field">
+          <label for="password">Mot de passe</label>
+          <input type="password" id="password" name="password" value="rachid573" required />
+        </div>
+      </div>
+
+      <input class="loadbtn" type="button" id="loadBtn" value="Charger les produits" />
+    </form>
+
+    <!-- Zone de statut -->
+    <div id="status" aria-live="polite"></div>
+
+    <!-- Grille de produits (au départ vide, simulation possible) -->
+    <h1>Produits</h1>
+    <div id="productsContainer">
+      <!-- Les cartes produits JS viendront ici -->
+      <!-- Pour test manuel, tu peux temporairement mettre :
+      <div class="product-card">
+        <h2>Produit 1</h2>
+        <p>Description du produit 1</p>
+      </div>
+      -->
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
