@@ -75,13 +75,13 @@ public class OdooClient
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Erreur de d�s�rialisation JSON : {ex.Message}");
+            Console.WriteLine($"Erreur de désérialisation JSON : {ex.Message}");
             return false;
         }
 
         if (authResponse == null)
         {
-            Console.WriteLine("R�ponse JSON invalide ou vide.");
+            Console.WriteLine("Réponse JSON invalide ou vide.");
             return false;
         }
 
@@ -108,7 +108,7 @@ public class OdooClient
 
         if (sessionCookie == null)
         {
-            Console.WriteLine("Aucun cookie session_id trouv�.");
+            Console.WriteLine("Aucun cookie session_id trouvé.");
             SessionId = null;
             return false;
         }
@@ -127,7 +127,7 @@ public class OdooClient
     {
         if (SessionId == null || Uid == null)
         {
-            throw new InvalidOperationException("Le client n'est pas authentifi�.");
+            throw new InvalidOperationException("Le client n'est pas authentifié.");
         }
 
         var endpoint = $"{_config.Url.TrimEnd('/')}/web/dataset/call_kw";
@@ -170,7 +170,7 @@ public class OdooClient
         }
         catch (Exception ex)
         {
-            throw new Exception("Erreur r�seau lors de l'appel � Odoo (call_kw).", ex);
+            throw new Exception("Erreur réseau lors de l'appel à Odoo (call_kw).", ex);
         }
 
         if (!response.IsSuccessStatusCode)
@@ -187,12 +187,12 @@ public class OdooClient
         }
         catch (Exception ex)
         {
-            throw new Exception($"Erreur de d�s�rialisation JSON (call_kw) : {ex.Message}", ex);
+            throw new Exception($"Erreur de désérialisation JSON (call_kw) : {ex.Message}", ex);
         }
 
         if (rpcResponse == null)
         {
-            throw new Exception("R�ponse JSON-RPC vide ou invalide (call_kw).");
+            throw new Exception("Réponse JSON-RPC vide ou invalide (call_kw).");
         }
 
         if (rpcResponse.Error != null)
@@ -210,7 +210,7 @@ public class OdooClient
                 var ok = await AuthenticateAsync();
                 if (!ok)
                 {
-                    throw new Exception("Session expir�e et r�-authentification impossible.");
+                    throw new Exception("Session expirée et ré-authentification impossible.");
                 }
 
                 return await CallKwAsync<TResult>(model, method, args, kwargs, retryOnAuthError: false);

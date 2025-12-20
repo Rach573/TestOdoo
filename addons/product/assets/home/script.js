@@ -1,4 +1,4 @@
-﻿// Appelle l'API backend (port 5000 par dÃ©faut, adapter si diffÃ©rent).
+// Appelle l'API backend (port 5500 par défaut, adapter si différent).
 const API_URL = "http://localhost:5500/api/products/loads";
 
 document.getElementById("loadBtn").addEventListener("click", loadProducts);
@@ -26,17 +26,22 @@ async function loadProducts() {
         try {
             data = text ? JSON.parse(text) : null;
         } catch (err) {
-            throw new Error("Rï¿½ponse non JSON : " + (text || "vide"));
+            throw new Error("Réponse non JSON : " + (text || "vide"));
         }
 
         if (!response.ok) {
             throw new Error((data && data.message) || text || "Erreur inconnue");
         }
 
-        status.textContent = "Produits chargï¿½s : " + (Array.isArray(data) ? data.length : 0);
+        status.textContent = "Produits chargés : " + (Array.isArray(data) ? data.length : 0);
         renderProducts(Array.isArray(data) ? data : []);
     } catch (e) {
-        status.textContent = "Erreur : " + e.message;
+        if (e.message.includes("Failed to fetch") || e.message.includes("NetworkError")) {
+            status.textContent = "Erreur de connexion : Impossible de joindre le serveur backend. Vérifiez que le serveur est démarré sur " + API_URL;
+        } else {
+            status.textContent = "Erreur : " + e.message;
+        }
+        console.error("Erreur détaillée:", e);
     }
 }
 
@@ -45,7 +50,7 @@ function renderProducts(products) {
     container.innerHTML = "";
 
     if (!products || products.length === 0) {
-        container.textContent = "Aucun produit ï¿½ afficher.";
+        container.textContent = "Aucun produit à afficher.";
         return;
     }
 
@@ -55,11 +60,11 @@ function renderProducts(products) {
 
         card.innerHTML = `
       <h2>${p.name ?? "-"}</h2>
-      <p><strong>Rï¿½fï¿½rence :</strong> ${p.defaultCode ?? "-"}</p>
+      <p><strong>Référence :</strong> ${p.defaultCode ?? "-"}</p>
       <p><strong>Prix :</strong> ${p.listPrice ?? "-"}</p>
       <p><strong>Type :</strong> ${p.type ?? "-"}</p>
-      <p><strong>Catï¿½gorie :</strong> ${formatCateg(p.categId)}</p>
-      <p><strong>Quantitï¿½ disponible :</strong> ${p.qtyAvailable ?? "-"}</p>
+      <p><strong>Catégorie :</strong> ${formatCateg(p.categId)}</p>
+      <p><strong>Quantité disponible :</strong> ${p.qtyAvailable ?? "-"}</p>
     `;
 
         container.appendChild(card);
